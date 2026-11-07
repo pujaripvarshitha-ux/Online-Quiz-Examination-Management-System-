@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quizzy | Online Examination</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside class="sidebar">
+  <a class="brand" href="#"><span class="brand-icon">✦</span> quizzy<span class="dot">.</span></a>
+  <div class="side-label">MENU</div>
+  <button class="nav active" data-view="dashboard"><span>⌂</span> Overview</button>
+  <button class="nav" data-view="quizzes"><span>▤</span> Explore quizzes</button>
+  <button class="nav" data-view="results"><span>◷</span> My results</button>
+  <div class="side-label manage-label">MANAGE</div>
+  <button class="nav" data-view="manage"><span>⚙</span> Quiz manager</button>
+  <div class="sidebar-bottom"><div class="help-icon">?</div><b>Need a little help?</b><p>Keep learning, one quiz at a time.</p></div>
+</aside>
+<main class="main">
+<header class="topbar"><div><span class="eyebrow">MONDAY, NOVEMBER 07, 2026</span><h1 id="page-title">Good afternoon, learner <span>✦</span></h1></div><div class="profile"><div class="avatar">V</div><div><b>Varshitha</b><small>Student account</small></div></div></header>
+<section id="dashboard-view" class="view">
+  <div class="hero"><div class="hero-copy"><span class="pill">YOUR LEARNING SPACE</span><h2>Ready to test<br>your <em>knowledge?</em></h2><p>Small steps lead to big achievements. Pick a quiz and see how far you can go.</p><button class="primary" onclick="showView('quizzes')">Explore quizzes <span>↗</span></button></div><div class="hero-art"><div class="orb"></div><div class="paper"><div class="paper-top">✦ &nbsp; QUIZ TIME</div><div class="paper-line wide"></div><div class="paper-line"></div><div class="choice selected">A <span>Learn something new</span> ✓</div><div class="choice">B <span>Keep on scrolling</span></div><div class="paper-star">✦</div></div><div class="spark s1">✧</div><div class="spark s2">✦</div></div></div>
+  <div class="stats"><div class="stat"><span class="stat-icon purple">▤</span><div><small>Available quizzes</small><strong id="stat-quizzes">—</strong></div></div><div class="stat"><span class="stat-icon peach">◷</span><div><small>Quizzes attempted</small><strong id="stat-attempts">—</strong></div></div><div class="stat"><span class="stat-icon mint">✧</span><div><small>Keep it up</small><strong>You're doing great!</strong></div></div></div>
+  <div class="section-head"><div><span class="eyebrow">PICK UP WHERE YOU LEFT OFF</span><h2>Featured quizzes</h2></div><button class="text-btn" onclick="showView('quizzes')">View all quizzes →</button></div><div id="featured" class="quiz-grid"></div>
+</section>
+<section id="quizzes-view" class="view hidden"><div class="section-head"><div><span class="eyebrow">CHALLENGE YOURSELF</span><h2>Explore quizzes</h2><p class="muted">Choose a topic and put your knowledge to the test.</p></div></div><div id="quiz-list" class="quiz-grid"></div></section>
+<section id="results-view" class="view hidden"><div class="section-head"><div><span class="eyebrow">YOUR PROGRESS</span><h2>My results</h2></div></div><div class="table-wrap"><table><thead><tr><th>Quiz</th><th>Score</th><th>Date</th><th>Status</th></tr></thead><tbody id="results-body"></tbody></table></div></section>
+<section id="manage-view" class="view hidden"><div class="section-head"><div><span class="eyebrow">ADMIN WORKSPACE</span><h2>Quiz manager</h2><p class="muted">Create, edit or remove quizzes and questions.</p></div><button class="primary" onclick="openQuizForm()">＋ Create quiz</button></div><div id="manage-list" class="manage-list"></div></section>
+</main>
+<div id="modal" class="modal hidden"><div class="modal-card"><button class="close" onclick="closeModal()">×</button><div id="modal-content"></div></div></div>
+<div id="toast" class="toast"></div>
+<script src="app.js"></script>
+</body></html>
